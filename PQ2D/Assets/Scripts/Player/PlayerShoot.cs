@@ -30,6 +30,11 @@ public class PlayerShoot : MonoBehaviour
 
     float currentConeAngle = 15.0f;
 
+    public bool IsShooting()
+    {
+        return timerShoot > 0.0f;
+    }
+
     public void Refill()
     {
         bulletAmount = bulletAmountMax;
@@ -59,15 +64,17 @@ public class PlayerShoot : MonoBehaviour
         }
 
         UpdateConeLines();
+
+        if (timerShoot > 0.0f)
+        {
+            timerShoot -= Time.deltaTime;
+        }
     }
 
     private void Shoot()
     {
-        if (timerShoot > 0.0f)
-        {
-            timerShoot -= Time.deltaTime;
+        if (IsShooting())
             return;
-        }
 
         timerShoot += timeBetween2bullets;
 
