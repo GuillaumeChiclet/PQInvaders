@@ -20,9 +20,7 @@ public class EnemySpawner : MonoBehaviour
     float timer = 0.0f;
     float waveDuration = 0.0f;
     float waveTimeBetweenSpawn = 0.0f;
-    Period wavePeriod;
-
-    bool waveRunning;
+    Period wavePeriod = new Period();
 
 
     public void LaunchWave(int day, int period, float duration)
@@ -38,30 +36,38 @@ public class EnemySpawner : MonoBehaviour
             waveTimeBetweenSpawn += chosenPeriod.enemiesNumber[i];
         }
 
-        waveTimeBetweenSpawn /= duration;
+        waveTimeBetweenSpawn = duration / waveTimeBetweenSpawn;
         waveDuration = duration;
+
+        timer = waveTimeBetweenSpawn;
     }
 
 
     private void Update()
     {
-        if (timer < waveDuration)
+        if (timer < waveTimeBetweenSpawn)
         {
             timer += Time.deltaTime;
             return;
         }
 
-        timer = 0.0f;
+        timer -= waveTimeBetweenSpawn;
 
         float offset = Random.Range(0.0f, 1.0f);
         Vector3 position = Vector3.Lerp(spawnBornLeft.position, spawnBornRight.position, offset);
         Vector3 destination = Vector3.Lerp(targetBornLeft.position, targetBornRight.position, offset);
 
-        switch (Random.Range(0, 1))
-        {
 
+        if (wavePeriod.enemiesNumber[0] > 0)
+        {
+            wavePeriod.enemiesNumber[0] -= 1;
+            Instantiate(enemyPrefabA, position, Quaternion.identity, this.transform).GetComponent<EnemyController>().SetDestination(destination);
         }
-        Instantiate(enemyPrefabA, position, Quaternion.identity, this.transform);
+        else if (wavePeriod.enemiesNumber[1] > 0)
+        {
+            wavePeriod.enemiesNumber[1] -= 1;
+            Instantiate(enemyPrefabB, position, Quaternion.identity, this.transform).GetComponent<EnemyController>().SetDestination(destination);
+        }
     }
 
     private void OnDrawGizmos()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Week Scriptable", menuName = "Scriptables/Week Scriptable")]
-public class WeekScriptable : MonoBehaviour
+public class WeekScriptable : ScriptableObject
 {
     public Day[] days;
 }
@@ -17,5 +17,5 @@ public class Day
 [System.Serializable]
 public class Period
 {
-    public int[] enemiesNumber;
+    public int[] enemiesNumber = new int[2];
 }

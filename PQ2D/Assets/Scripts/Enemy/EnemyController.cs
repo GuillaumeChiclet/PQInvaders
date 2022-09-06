@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     public UnityEvent OnDeath;
 
     Vector3 destination = Vector3.zero;
+    float timer = 0.0f;
 
     private void Awake()
     {
@@ -26,14 +27,22 @@ public class EnemyController : MonoBehaviour, IDamageable
         life = lifeMax;
     }
 
-    private void Start()
+    private void Update()
     {
-        agent.SetDestination(Vector3.zero);
+        if (timer < 3.0f)
+        {
+            timer += Time.deltaTime;
+            return;
+        }
+
+        agent.SetDestination(destination);
+        timer = 0.0f;
     }
 
     public void SetDestination(Vector3 destination)
     {
         this.destination = destination;
+        agent.SetDestination(destination);
     }
 
     public void Damage(int value = 1)
