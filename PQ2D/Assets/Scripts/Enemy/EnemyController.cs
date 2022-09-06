@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
@@ -11,6 +12,10 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     NavMeshAgent agent;
 
+    public UnityEvent OnDeath;
+
+    Vector3 destination = Vector3.zero;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -19,6 +24,16 @@ public class EnemyController : MonoBehaviour, IDamageable
         agent.speed = moveSpeed;
 
         life = lifeMax;
+    }
+
+    private void Start()
+    {
+        agent.SetDestination(Vector3.zero);
+    }
+
+    public void SetDestination(Vector3 destination)
+    {
+        this.destination = destination;
     }
 
     public void Damage(int value = 1)
@@ -31,10 +46,13 @@ public class EnemyController : MonoBehaviour, IDamageable
         }
     }
 
-    private void Start()
+    public void Die()
     {
-        agent.SetDestination(Vector3.zero);
+        OnDeath.Invoke();
+        Destroy(gameObject);
     }
+
+    
 
 
 }
