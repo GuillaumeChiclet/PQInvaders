@@ -1,0 +1,104 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using FMODUnity;
+
+public class PlayerShoot : MonoBehaviour
+{
+    public EventReference soundShoot;
+    private FMOD.Studio.EventInstance instance;
+
+    [Header("Shoot Bullet")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bulletImpulse;
+
+    [Header("Spray Cone")]
+    [SerializeField] private Vector2 coneAngleMinMax = new Vector2(15.0f, 25.0f);
+    [SerializeField] private Vector2 sprayForce = new Vector2(0.2f, 0.5f);
+    [SerializeField] private float sprayDeplete = 1.0f;
+
+    [Header("Aim Sight")]
+    [SerializeField] private float aimSightLength = 10.0f;
+    [SerializeField] private Gradient aimSightColor;
+    [SerializeField] private LineRenderer lineLeft;
+    [SerializeField] private LineRenderer lineRight;
+
+    float currentConeAngle = 15.0f;
+
+    private void Awake()
+    {
+        currentConeAngle = coneAngleMinMax.x;
+
+        lineLeft.positionCount = 2;
+        lineRight.positionCount = 2;
+        lineLeft.colorGradient = aimSightColor;
+        lineRight.colorGradient = aimSightColor;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+        else
+        {
+            SprayDeplete();
+        }
+
+        UpdateConeLines();
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D bulletRb))
+        {
+            Vector3 shootDir = Quaternion.Euler(0, 0, Random.Range(-currentConeAngle, currentConeAngle)) * firePoint.right;
+            bulletRb.AddForce(shootDir * bulletImpulse, ForceMode2D.Impulse);
+            Spray();
+            instance = FMODUnity.RuntimeManager.CreateInstance(soundShoot);
+            instance.start();
+            instance.release();
+        }
+    }
+
+    private void Spray()
+    {
+        currentConeAngle += Random.Range(sprayForce.x, sprayForce.y);
+        currentConeAngle = Mathf.Clamp(currentConeAngle, coneAngleMinMax.x, coneAngleMinMax.y);
+    }
+
+    private void SprayDeplete()
+    {
+        currentConeAngle -= sprayDeplete * Time.deltaTime;
+        currentConeAngle = Mathf.Clamp(currentConeAngle, coneAngleMinMax.x, coneAngleMinMax.y);
+    }
+
+    private void UpdateConeLines()
+    {
+        lineLeft.SetPosition(0, Vector3.zero);
+        lineRight.SetPosition(0, Vector3.zero);
+
+        Vector3 forwardLeft = Quaternion.Euler(0, 0, currentConeAngle) * Vector3.right;
+        Vector3 forwardRight = Quaternion.Euler(0, 0, -currentConeAngle) * Vector3.right;
+
+        lineLeft.SetPosition(1, forwardLeft * aimSightLength);
+        lineRight.SetPosition(1, forwardRight * aimSightLength);
+    }
+
+    private void OnDrawGizmos()
+    {
+        /*
+        Vector3 forwardLeft = Quaternion.Euler(0, 0, currentConeAngle) * firePoint.right;
+        Vector3 forwardRight = Quaternion.Euler(0, 0, -currentConeAngle) * firePoint.right;
+
+        float length = 10.0f;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(firePoint.position, firePoint.position + forwardLeft * length);
+        Gizmos.DrawLine(firePoint.position, firePoint.position + forwardRight * length);
+        */
+    }
+}
