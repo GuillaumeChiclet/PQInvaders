@@ -27,10 +27,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + inputMovement * moveSpeed * Time.fixedDeltaTime);
-
         Vector2 lookDir = (Vector2)aimCursor.position - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
+
+        rb.MovePosition(rb.position + inputMovement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    /*
+    public void Knockback()
+    {
+        StartCoroutine(Knock());
+    }
+
+    IEnumerator Knock()
+    {
+        knocked = true;
+        yield return new WaitForSeconds(0.1f);
+        knocked = false;
+    }
+    */
 }

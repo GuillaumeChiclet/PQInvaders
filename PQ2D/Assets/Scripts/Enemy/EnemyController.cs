@@ -10,15 +10,17 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] private int lifeMax = 3;
     private int life = 0;
 
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
+    private Rigidbody2D rb;
 
-    public UnityEvent OnDeath;
+    private Vector3 destination = Vector3.zero;
+    private bool stopped = false;
 
-    Vector3 destination = Vector3.zero;
-    float timer = 0.0f;
+    public UnityEvent<EnemyController> OnDeath = new();
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -29,14 +31,18 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (timer < 3.0f)
-        {
-            timer += Time.deltaTime;
+        if (stopped)
             return;
-        }
+
+        transform.right = Vector3.MoveTowards(transform.right, agent.desiredVelocity.normalized, 50.0f * Time.deltaTime);
+    }
+
+    public void UpdateDestination()
+    {
+        if (stopped)
+            return;
 
         agent.SetDestination(destination);
-        timer = 0.0f;
     }
 
     public void SetDestination(Vector3 destination)
@@ -51,17 +57,20 @@ public class EnemyController : MonoBehaviour, IDamageable
         life = Mathf.Clamp(life, 0, lifeMax);
         if (life == 0)
         {
-            Destroy(this.gameObject);
+            Die();
         }
     }
 
     public void Die()
     {
-        OnDeath.Invoke();
+        OnDeath.Invoke(this);
         Destroy(gameObject);
     }
 
+    public void Stop()
+    {
+        stopped = true;
+    }
     
-
-
+    
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -17,10 +18,18 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject enemyPrefabA;
     [SerializeField] private GameObject enemyPrefabB;
 
-    float timer = 0.0f;
-    float waveDuration = 0.0f;
-    float waveTimeBetweenSpawn = 0.0f;
-    Period wavePeriod = new Period();
+    private float timer = 0.0f;
+    private float waveTimeBetweenSpawn = 0.0f;
+    private Period wavePeriod = new Period();
+
+    [HideInInspector] public UnityEvent OnAddEnemy = new();
+    [HideInInspector] public UnityEvent OnRemoveEnemy = new();
+
+
+    public List<EnemyController> enemies = new List<EnemyController>();
+    public int enemyCounter = 0;
+    float enemyUpdateTimer = 0.0f;
+    float enemyUpdate = 0.2f;
 
 
     public void LaunchWave(int day, int period, float duration)
@@ -37,13 +46,28 @@ public class EnemySpawner : MonoBehaviour
         }
 
         waveTimeBetweenSpawn = duration / waveTimeBetweenSpawn;
-        waveDuration = duration;
 
         timer = waveTimeBetweenSpawn;
     }
 
 
     private void Update()
+    {
+        UpdateWave();
+
+        if (enemyUpdateTimer < enemyUpdate)
+        {
+            enemyUpdateTimer += Time.deltaTime;
+        }
+        else
+        {
+            enemyUpdateTimer -= enemyUpdate;
+            UpdateEnemies();
+        }
+            
+    }
+
+    private void UpdateWave()
     {
         if (timer < waveTimeBetweenSpawn)
         {
@@ -57,16 +81,46 @@ public class EnemySpawner : MonoBehaviour
         Vector3 position = Vector3.Lerp(spawnBornLeft.position, spawnBornRight.position, offset);
         Vector3 destination = Vector3.Lerp(targetBornLeft.position, targetBornRight.position, offset);
 
-
         if (wavePeriod.enemiesNumber[0] > 0)
         {
-            wavePeriod.enemiesNumber[0] -= 1;
-            Instantiate(enemyPrefabA, position, Quaternion.identity, this.transform).GetComponent<EnemyController>().SetDestination(destination);
+            SpawnEnemy(enemyPrefabA, position, destination);
         }
         else if (wavePeriod.enemiesNumber[1] > 0)
         {
-            wavePeriod.enemiesNumber[1] -= 1;
-            Instantiate(enemyPrefabB, position, Quaternion.identity, this.transform).GetComponent<EnemyController>().SetDestination(destination);
+            SpawnEnemy(enemyPrefabB, position, destination);
+        }
+    }
+
+    private void UpdateEnemies()
+    {
+        if (enemyCounter >= enemies.Count)
+            enemyCounter = 0;
+
+        if (enemyCounter < enemies.Count)
+            enemies[enemyCounter].UpdateDestination();
+
+        enemyCounter++;
+    }
+
+
+    private void SpawnEnemy(GameObject prefab, Vector3 position, Vector3 destination)
+    {
+        wavePeriod.enemiesNumber[0] -= 1;
+        EnemyController enemy = Instantiate(prefab, position, Quaternion.identity, this.transform).GetComponent<EnemyController>();
+        enemy.SetDestination(destination);
+        enemy.OnDeath.AddListener(DeleteEnemy);
+        enemies.Add(enemy);
+
+        OnAddEnemy.Invoke();
+    }
+
+    private void DeleteEnemy(EnemyController enemy)
+    {
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+
+            OnRemoveEnemy.Invoke();
         }
     }
 

@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float enddayDuration = 10.0f;
 
+    [HideInInspector] public int EnemyNumber = 0;
+    private void AddEnemy() => EnemyNumber++;
+    private void RemoveEnemy() => EnemyNumber--;
+    
 
     private int day = 0;
 
@@ -32,11 +36,18 @@ public class GameManager : MonoBehaviour
     private float currentDuration = 0.0f;
     private EPeriod currentPeriod = EPeriod.Standby;
 
+    private bool gameStopped = false;
+
     private void Start()
     {
         timer = 0.0f;
         currentPeriod = EPeriod.Standby;
         currentDuration = standbyDuration;
+
+        foreach (RoomManager room in rooms)
+        {
+            room.SetupSpawners(AddEnemy, RemoveEnemy);
+        }
 
         for (int i = 1; i < rooms.Length; i++)
         {
@@ -46,6 +57,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (gameStopped)
+            return;
+
         if (timer < currentDuration)
         {
             timer += Time.deltaTime;
@@ -80,7 +94,7 @@ public class GameManager : MonoBehaviour
             case EPeriod.Endday:
                 if (day == 5)
                 {
-                    // WIN;
+                    Win();
                     return;
                 }
                 currentPeriod = EPeriod.Morning;
@@ -104,6 +118,19 @@ public class GameManager : MonoBehaviour
                 rooms[i].LaunchWave(day, period, currentDuration);
             }
         }
+    }
+
+
+    public void Win()
+    {
+        gameStopped = true;
+        Debug.Log("WIN");
+    }
+
+    public void GameOver()
+    {
+        gameStopped = true;
+        Debug.Log("GAME OVER");
     }
 
 }
