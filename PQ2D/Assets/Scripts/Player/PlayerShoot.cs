@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletImpulse;
+    [SerializeField] private Vector2 bulletTorque;
     [SerializeField] private float timeBetween2bullets = 0.2f;
     [SerializeField] private int bulletAmountMax = 50;
     private int bulletAmount = 0;
@@ -91,11 +92,16 @@ public class PlayerShoot : MonoBehaviour
 
         bulletAmount -= 1;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, Random.Range(-360, 360)));
         if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D bulletRb))
         {
             Vector3 shootDir = Quaternion.Euler(0, 0, Random.Range(-currentConeAngle, currentConeAngle)) * firePoint.right;
             bulletRb.AddForce(shootDir * bulletImpulse, ForceMode2D.Impulse);
+            int rngRot = Random.Range(0, 2);
+            if (rngRot == 0)
+                bulletRb.angularVelocity = -Random.Range(bulletTorque.x, bulletTorque.y);
+            else
+                bulletRb.angularVelocity = Random.Range(bulletTorque.x, bulletTorque.y);
             Spray();
             instance = FMODUnity.RuntimeManager.CreateInstance(soundShoot);
             instance.start();
