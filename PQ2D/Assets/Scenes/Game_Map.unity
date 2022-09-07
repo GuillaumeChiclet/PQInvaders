@@ -2195,6 +2195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8133865181514547167, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
+      propertyPath: week
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d82185aaf90c7044bc90ed05b66a710, type: 2}
     - target: {fileID: 8133865182966213421, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
       propertyPath: m_LocalPosition.y
       value: 16.00032
@@ -4285,6 +4289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8133865181514547167, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
+      propertyPath: week
+      value: 
+      objectReference: {fileID: 11400000, guid: d3a8e679a09ca7441b88d51f9babef29, type: 2}
     - target: {fileID: 8133865182966213421, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.000923
@@ -4806,6 +4814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8133865181514547167, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
+      propertyPath: week
+      value: 
+      objectReference: {fileID: 11400000, guid: 7acf64d7aebf35742a18def6d4d6c9c4, type: 2}
     - target: {fileID: 8133865182966213421, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.50083
@@ -6110,6 +6122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8133865181514547167, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
+      propertyPath: week
+      value: 
+      objectReference: {fileID: 11400000, guid: b92683859acaef2419057bb6e370ebeb, type: 2}
     - target: {fileID: 8133865182966213421, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.00024
@@ -6452,11 +6468,11 @@ MonoBehaviour:
   - {fileID: 434630960}
   - {fileID: 1257301935}
   - {fileID: 1725440127}
-  standbyDuration: 1
-  morningDuration: 1
-  middayDuration: 1
-  eveningDuration: 1
-  enddayDuration: 1
+  standbyDuration: 3
+  morningDuration: 15
+  middayDuration: 15
+  eveningDuration: 15
+  enddayDuration: 2
   EnemyNumber: 0
 --- !u!4 &1617461022
 Transform:
@@ -8283,6 +8299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8133865181514547167, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
+      propertyPath: week
+      value: 
+      objectReference: {fileID: 11400000, guid: 55b6cddf1a097284b9832d08681b8c75, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7d5275439024643ad0f025ca7374d1, type: 3}
 --- !u!4 &1893331459 stripped
@@ -9670,12 +9690,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4699073863110591495, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
+      propertyPath: bulletAmountMax
+      value: 9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699073863110591495, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
       propertyPath: soundShoot.Path
       value: event:/Character/Shoot
       objectReference: {fileID: 0}
     - target: {fileID: 4699073863110591495, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
       propertyPath: coneAngleMinMax.y
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699073863110591495, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
+      propertyPath: timeBetween2bullets
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4699073863110591495, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
       propertyPath: soundShoot.Guid.Data1
@@ -9728,6 +9756,14 @@ PrefabInstance:
     - target: {fileID: 4699073864212616842, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838811135273923906, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838811135273923906, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
+      propertyPath: timeBetween2Attacks
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9182793034857306327, guid: 07827c95f40e0dc408769977b7a5ea68, type: 3}
       propertyPath: m_RootOrder
