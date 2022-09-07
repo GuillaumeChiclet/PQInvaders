@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SimpleBullet : MonoBehaviour
 {
+    [SerializeField] private GameObject particlesOnHit;
     [SerializeField] private float lifeTime = 10.0f;
     private float lifeTimer = 0.0f;
     private void Update()
@@ -28,6 +29,11 @@ public class SimpleBullet : MonoBehaviour
     private void DestroyBullet()
     {
         // Here spawn FX & VFX
+        if (particlesOnHit)
+        {
+            Instantiate(particlesOnHit, transform.position, particlesOnHit.transform.rotation);
+        }
+
         Destroy(this.gameObject);
     }
 }

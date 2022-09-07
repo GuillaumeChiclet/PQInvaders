@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
+    [SerializeField] private GameObject particlesOnHit;
+    [SerializeField] private GameObject particlesOnDeath;
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private int lifeMax = 3;
     private int life = 0;
@@ -55,6 +57,11 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         life -= value;
         life = Mathf.Clamp(life, 0, lifeMax);
+        if (particlesOnHit)
+        {
+            Instantiate(particlesOnHit, transform.position, particlesOnHit.transform.rotation);
+        }
+
         if (life == 0)
         {
             Die();
@@ -63,6 +70,10 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        if (particlesOnDeath)
+        {
+            Instantiate(particlesOnDeath, transform.position, particlesOnDeath.transform.rotation);
+        }
         OnDeath.Invoke(this);
         Destroy(gameObject);
     }

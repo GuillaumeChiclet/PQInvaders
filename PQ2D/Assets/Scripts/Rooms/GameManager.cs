@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private bool gameStopped = false;
 
+
     private void Start()
     {
         timer = 0.0f;
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
                 currentDuration = standbyDuration;
                 day += 1;
                 rooms[day].gameObject.SetActive(true);
+                rooms[day].ActivateRoom();
                 break;
             default:
                 break;

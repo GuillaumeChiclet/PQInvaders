@@ -6,6 +6,25 @@ using UnityEngine.Events;
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] private EnemySpawner[] enemySpawners;
+    [SerializeField] private GameObject[] roomToActivate;
+    [SerializeField] private GameObject[] wallToDeactivate;
+
+    public bool activated = false;
+
+    public void ActivateRoom()
+    {
+        activated = true;
+        foreach (GameObject room in roomToActivate)
+        {
+            room.SetActive(true);
+        }
+        foreach (GameObject wall in wallToDeactivate)
+        {
+            wall.SetActive(false);
+        }
+    }
+
+    
 
     public void SetupSpawners(UnityAction add, UnityAction remove)
     {
