@@ -89,22 +89,22 @@ public class EnemySpawner : MonoBehaviour
             int rng = Random.Range(0, 1);
             if (rng == 0)
             {
-                SpawnEnemy(enemyPrefabA, position, destination);
+                SpawnEnemy(enemyPrefabA, 0, position, destination);
             }
             else
             {
-                SpawnEnemy(enemyPrefabB, position, destination);
+                SpawnEnemy(enemyPrefabB, 1, position, destination);
             }
         }
         else
         {
             if (wavePeriod.enemiesNumber[0] > 0)
             {
-                SpawnEnemy(enemyPrefabA, position, destination);
+                SpawnEnemy(enemyPrefabA, 0, position, destination);
             }
             else if (wavePeriod.enemiesNumber[1] > 0)
             {
-                SpawnEnemy(enemyPrefabB, position, destination);
+                SpawnEnemy(enemyPrefabB, 1, position, destination);
             }
         }
 
@@ -123,9 +123,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-    private void SpawnEnemy(GameObject prefab, Vector3 position, Vector3 destination)
+    private void SpawnEnemy(GameObject prefab, int nb, Vector3 position, Vector3 destination)
     {
-        wavePeriod.enemiesNumber[0] -= 1;
+        wavePeriod.enemiesNumber[nb] -= 1;
         EnemyController enemy = Instantiate(prefab, position, Quaternion.identity, this.transform).GetComponent<EnemyController>();
         enemy.SetDestination(destination);
         enemy.OnDeath.AddListener(DeleteEnemy);
