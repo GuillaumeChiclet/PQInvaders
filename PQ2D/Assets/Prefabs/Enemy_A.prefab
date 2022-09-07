@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6331348382116043228}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6331348382686701863}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6331348382116043230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1892085159, guid: 61e2e8ac02b6bc648be7f24ac2178a69, type: 3}
+  m_Sprite: {fileID: 261654449, guid: 544add5fe20acba42a5f53799f5c85d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6331348382686701863}
-  - component: {fileID: 6331348382686701860}
+  - component: {fileID: 3499006588913289}
   - component: {fileID: 6331348382686701865}
   - component: {fileID: 6331348382686701861}
   - component: {fileID: 6331348382686701862}
@@ -121,8 +121,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6331348382686701860
-CircleCollider2D:
+--- !u!70 &3499006588913289
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,8 +135,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.4
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!50 &6331348382686701865
 Rigidbody2D:
   serializedVersion: 4
@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67fdec3589ee7040afa212576a66d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6331348382116043230}
+  spriteShuffle: []
   particlesOnHit: {fileID: 0}
   particlesOnDeath: {fileID: 0}
   moveSpeed: 2

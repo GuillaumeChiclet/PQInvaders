@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite[] spriteShuffle;
     [SerializeField] private GameObject particlesOnHit;
     [SerializeField] private GameObject particlesOnDeath;
     [SerializeField] private float moveSpeed = 5.0f;
@@ -29,6 +31,8 @@ public class EnemyController : MonoBehaviour, IDamageable
         agent.speed = moveSpeed;
 
         life = lifeMax;
+
+        //spriteRenderer.sprite = spriteShuffle[Random.Range(0, spriteShuffle.Length)];
     }
 
     private void Update()
@@ -36,7 +40,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         if (stopped)
             return;
 
-        transform.right = Vector3.MoveTowards(transform.right, agent.desiredVelocity.normalized, 50.0f * Time.deltaTime);
+        spriteRenderer.flipX = agent.desiredVelocity.x > 0;
     }
 
     public void UpdateDestination()
@@ -45,6 +49,8 @@ public class EnemyController : MonoBehaviour, IDamageable
             return;
 
         agent.SetDestination(destination);
+
+        
     }
 
     public void SetDestination(Vector3 destination)
