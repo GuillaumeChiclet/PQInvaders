@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe50d2e210bb4b4b808065ceb0ff690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeRespawn: 5
+  timeBeforeRespawn: 15
   ammunitionSprite: {fileID: 558455422797291215}
 --- !u!58 &558455423308261453
 CircleCollider2D:

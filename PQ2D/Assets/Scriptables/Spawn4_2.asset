@@ -26,10 +26,10 @@ MonoBehaviour:
     - enemiesNumber: 0000000000000000
     - enemiesNumber: 0000000000000000
   - periods:
-    - enemiesNumber: 0300000000000000
-    - enemiesNumber: 0300000000000000
-    - enemiesNumber: 0600000002000000
+    - enemiesNumber: 0200000000000000
+    - enemiesNumber: 0200000000000000
+    - enemiesNumber: 0500000001000000
   - periods:
-    - enemiesNumber: 0400000001000000
-    - enemiesNumber: 0400000001000000
-    - enemiesNumber: 0400000001000000
+    - enemiesNumber: 0300000001000000
+    - enemiesNumber: 0300000000000000
+    - enemiesNumber: 0300000000000000
