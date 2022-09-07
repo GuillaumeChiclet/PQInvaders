@@ -95,10 +95,13 @@ public class GameManager : MonoBehaviour
                 timer = 0.0f;
                 break;
             case EPeriod.Endday:
+                if (EnemyNumber > 0)
+                    break;
+
                 if (day == 4)
                 {
                     Win();
-                    return;
+                    break;
                 }
                 currentPeriod = EPeriod.Morning;
                 currentDuration = standbyDuration;

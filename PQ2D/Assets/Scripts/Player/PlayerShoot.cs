@@ -35,6 +35,11 @@ public class PlayerShoot : MonoBehaviour
         return timerShoot > 0.0f;
     }
 
+    public bool IsFull()
+    {
+        return bulletAmount == bulletAmountMax;
+    }
+
     public void Refill()
     {
         bulletAmount = bulletAmountMax;

@@ -8,12 +8,12 @@ public class Ammunition : MonoBehaviour
     [SerializeField] private GameObject ammunitionSprite;
     bool isOn = true;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (isOn && collision.gameObject.TryGetComponent<PlayerShoot>(out PlayerShoot playerShoot))
         {
             playerShoot.Refill();
-            
+
             StartCoroutine(Reload());
         }
     }

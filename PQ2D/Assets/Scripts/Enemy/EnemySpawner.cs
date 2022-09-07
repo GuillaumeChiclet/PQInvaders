@@ -81,14 +81,34 @@ public class EnemySpawner : MonoBehaviour
         Vector3 position = Vector3.Lerp(spawnBornLeft.position, spawnBornRight.position, offset);
         Vector3 destination = Vector3.Lerp(targetBornLeft.position, targetBornRight.position, offset);
 
-        if (wavePeriod.enemiesNumber[0] > 0)
+        bool hasFirst = wavePeriod.enemiesNumber[0] > 0;
+        bool hasSecond = wavePeriod.enemiesNumber[1] > 0;
+
+        if (hasFirst && hasSecond)
         {
-            SpawnEnemy(enemyPrefabA, position, destination);
+            int rng = Random.Range(0, 1);
+            if (rng == 0)
+            {
+                SpawnEnemy(enemyPrefabA, position, destination);
+            }
+            else
+            {
+                SpawnEnemy(enemyPrefabB, position, destination);
+            }
         }
-        else if (wavePeriod.enemiesNumber[1] > 0)
+        else
         {
-            SpawnEnemy(enemyPrefabB, position, destination);
+            if (wavePeriod.enemiesNumber[0] > 0)
+            {
+                SpawnEnemy(enemyPrefabA, position, destination);
+            }
+            else if (wavePeriod.enemiesNumber[1] > 0)
+            {
+                SpawnEnemy(enemyPrefabB, position, destination);
+            }
         }
+
+        
     }
 
     private void UpdateEnemies()
