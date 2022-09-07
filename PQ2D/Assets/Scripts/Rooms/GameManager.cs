@@ -116,6 +116,8 @@ public class GameManager : MonoBehaviour
         }
 
         timer += Time.deltaTime;
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyNumber", EnemyNumber);
     }
 
     private void LaunchWave(int period)

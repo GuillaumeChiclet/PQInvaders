@@ -196,7 +196,7 @@ MonoBehaviour:
   spriteShuffle: []
   particlesOnHit: {fileID: 0}
   particlesOnDeath: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 1
   lifeMax: 1
   OnDeath:
     m_PersistentCalls:

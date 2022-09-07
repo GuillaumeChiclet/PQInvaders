@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - periods:
-    - enemiesNumber: 0d00000000000000
-    - enemiesNumber: 1100000002000000
-    - enemiesNumber: 1500000003000000
+    - enemiesNumber: 1a00000000000000
+    - enemiesNumber: 2200000002000000
+    - enemiesNumber: 2b00000003000000
   - periods:
-    - enemiesNumber: 0900000001000000
-    - enemiesNumber: 0900000002000000
-    - enemiesNumber: 0400000001000000
+    - enemiesNumber: 1100000001000000
+    - enemiesNumber: 1a00000002000000
+    - enemiesNumber: 0000000001000000
   - periods:
     - enemiesNumber: 0100000000000000
-    - enemiesNumber: 0900000001000000
-    - enemiesNumber: 0600000001000000
+    - enemiesNumber: 0000000001000000
+    - enemiesNumber: 0000000001000000
   - periods:
-    - enemiesNumber: 0100000001000000
-    - enemiesNumber: 0200000000000000
+    - enemiesNumber: 0000000001000000
+    - enemiesNumber: 0100000000000000
     - enemiesNumber: 0100000000000000
   - periods:
     - enemiesNumber: 0200000001000000

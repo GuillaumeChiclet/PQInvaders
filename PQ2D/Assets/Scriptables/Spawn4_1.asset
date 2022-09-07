@@ -27,8 +27,8 @@ MonoBehaviour:
     - enemiesNumber: 0000000000000000
   - periods:
     - enemiesNumber: 0100000000000000
-    - enemiesNumber: 0300000000000000
-    - enemiesNumber: 0500000001000000
+    - enemiesNumber: 0500000000000000
+    - enemiesNumber: 0a00000002000000
   - periods:
     - enemiesNumber: 0200000001000000
     - enemiesNumber: 0200000001000000

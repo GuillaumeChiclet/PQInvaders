@@ -20,15 +20,15 @@ MonoBehaviour:
   - periods:
     - enemiesNumber: 0300000000000000
     - enemiesNumber: 0400000000000000
-    - enemiesNumber: 0900000000000000
+    - enemiesNumber: 1100000000000000
   - periods:
-    - enemiesNumber: 0400000000000000
+    - enemiesNumber: 0900000000000000
     - enemiesNumber: 0300000001000000
     - enemiesNumber: 0100000000000000
   - periods:
     - enemiesNumber: 0100000000000000
     - enemiesNumber: 0100000000000000
-    - enemiesNumber: 0100000001000000
+    - enemiesNumber: 0000000001000000
   - periods:
     - enemiesNumber: 0200000000000000
     - enemiesNumber: 0200000000000000
