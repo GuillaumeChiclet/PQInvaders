@@ -15,38 +15,11 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637980831689565736
+  lastModified: 637980707726198633
   FileSizes:
   - Name: 
-    Value: 846
+    Value: 764
   Exists: 1
---- !u!114 &-2538754194243967960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
-  m_EditorClassIdentifier: 
-  Path: event:/Music
-  Guid:
-    Data1: 1005293835
-    Data2: 1311906999
-    Data3: 1059744673
-    Data4: 45583852
-  Banks:
-  - {fileID: 4728186626627911917}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 14500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,14 +37,12 @@ MonoBehaviour:
   - {fileID: 4728186626627911917}
   EditorEvents:
   - {fileID: 4284471755079036056}
-  - {fileID: 5358485440103737827}
-  - {fileID: -2538754194243967960}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4728186626627911917}
   StringsBanks:
   - {fileID: -8023851068779399664}
-  cacheTime: 637980831689565736
+  cacheTime: 637980707726198633
   cacheVersion: 131592
 --- !u!114 &4284471755079036056
 MonoBehaviour:
@@ -115,33 +86,6 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637980831689545773
+  lastModified: 637980707724252237
   FileSizes: []
   Exists: 1
---- !u!114 &5358485440103737827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Amb
-  m_EditorClassIdentifier: 
-  Path: event:/Amb
-  Guid:
-    Data1: -1442454012
-    Data2: 1220465561
-    Data3: 756162432
-    Data4: -876212861
-  Banks:
-  - {fileID: 4728186626627911917}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4000

@@ -36,12 +36,12 @@ public class TopDownCamera : MonoBehaviour
         Vector3 cameraTarget = playerPos;
         if (toCursor.sqrMagnitude > distanceBeforeAimingSqr)
         {
-            cameraTarget += toCursor.normalized * (toCursor.magnitude - distanceBeforeAiming) * aimingOffsetPercent;
+            cameraTarget += toCursor.normalized * aimingOffsetPercent;
         }
 
-        float distance = (cameraTarget - currentPos).magnitude;
+        float distance = (playerPos - currentPos).magnitude;
 
-        Vector3 newPos = Vector3.MoveTowards(currentPos, cameraTarget, followSpeed * distance * Time.deltaTime);
+        Vector3 newPos = Vector3.MoveTowards(currentPos, playerPos, followSpeed * distance * Time.deltaTime);
         newPos.z = zDistance;
         transform.position = newPos;
     }

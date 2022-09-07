@@ -12,10 +12,6 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletImpulse;
-    [SerializeField] private float timeBetween2bullets = 0.2f;
-    [SerializeField] private int bulletAmountMax = 50;
-    private int bulletAmount = 0;
-    private float timerShoot = 0.0f;
 
     [Header("Spray Cone")]
     [SerializeField] private Vector2 coneAngleMinMax = new Vector2(15.0f, 25.0f);
@@ -30,16 +26,6 @@ public class PlayerShoot : MonoBehaviour
 
     float currentConeAngle = 15.0f;
 
-    public bool IsShooting()
-    {
-        return timerShoot > 0.0f;
-    }
-
-    public void Refill()
-    {
-        bulletAmount = bulletAmountMax;
-    }
-
     private void Awake()
     {
         currentConeAngle = coneAngleMinMax.x;
@@ -48,13 +34,11 @@ public class PlayerShoot : MonoBehaviour
         lineRight.positionCount = 2;
         lineLeft.colorGradient = aimSightColor;
         lineRight.colorGradient = aimSightColor;
-
-        bulletAmount = bulletAmountMax;
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") || Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
@@ -64,28 +48,10 @@ public class PlayerShoot : MonoBehaviour
         }
 
         UpdateConeLines();
-
-        if (timerShoot > 0.0f)
-        {
-            timerShoot -= Time.deltaTime;
-        }
     }
 
     private void Shoot()
     {
-        if (IsShooting())
-            return;
-
-        timerShoot += timeBetween2bullets;
-
-        if (bulletAmount <= 0)
-        {
-            // TODO : sound *clic clic* no more bullets
-            return;
-        }
-
-        bulletAmount -= 1;
-
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D bulletRb))
         {
@@ -122,4 +88,17 @@ public class PlayerShoot : MonoBehaviour
         lineRight.SetPosition(1, forwardRight * aimSightLength);
     }
 
+    private void OnDrawGizmos()
+    {
+        /*
+        Vector3 forwardLeft = Quaternion.Euler(0, 0, currentConeAngle) * firePoint.right;
+        Vector3 forwardRight = Quaternion.Euler(0, 0, -currentConeAngle) * firePoint.right;
+
+        float length = 10.0f;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(firePoint.position, firePoint.position + forwardLeft * length);
+        Gizmos.DrawLine(firePoint.position, firePoint.position + forwardRight * length);
+        */
+    }
 }
