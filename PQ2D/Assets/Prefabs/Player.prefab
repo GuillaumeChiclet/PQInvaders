@@ -164,6 +164,7 @@ MonoBehaviour:
   damage: 1
   range: 1.8
   coneAngle: 30
+  timeBetween2Attacks: 0.5
 --- !u!1 &705092230350522685
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 586332663, guid: 61e2e8ac02b6bc648be7f24ac2178a69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

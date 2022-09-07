@@ -50,10 +50,12 @@ public class GameManager : MonoBehaviour
             room.SetupSpawners(AddEnemy, RemoveEnemy);
         }
 
+        /*
         for (int i = 1; i < rooms.Length; i++)
         {
             rooms[i].gameObject.SetActive(false);
         }
+        */
     }
 
     private void Update()
@@ -73,19 +75,19 @@ public class GameManager : MonoBehaviour
                 currentPeriod = EPeriod.Morning;
                 currentDuration = morningDuration;
                 timer = 0.0f;
-                LaunchWave((int)currentPeriod);
+                LaunchWave(0);
                 break;
             case EPeriod.Morning:
                 currentPeriod = EPeriod.Midday;
                 currentDuration = middayDuration;
                 timer = 0.0f;
-                LaunchWave((int)currentPeriod);
+                LaunchWave(1);
                 break;
             case EPeriod.Midday:
                 currentPeriod = EPeriod.Evening;
                 currentDuration = eveningDuration;
                 timer = 0.0f;
-                LaunchWave((int)currentPeriod);
+                LaunchWave(2);
                 break;
             case EPeriod.Evening:
                 currentPeriod = EPeriod.Endday;
@@ -93,7 +95,7 @@ public class GameManager : MonoBehaviour
                 timer = 0.0f;
                 break;
             case EPeriod.Endday:
-                if (day == 5)
+                if (day == 4)
                 {
                     Win();
                     return;
@@ -101,8 +103,10 @@ public class GameManager : MonoBehaviour
                 currentPeriod = EPeriod.Morning;
                 currentDuration = standbyDuration;
                 day += 1;
-                rooms[day].gameObject.SetActive(true);
-                rooms[day].ActivateRoom();
+
+                if (day < rooms.Length)
+                    rooms[day].ActivateRoom();
+
                 break;
             default:
                 break;
@@ -115,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < rooms.Length; i++)
         {
-            if (rooms[i].isActiveAndEnabled)
+            if (rooms[i].activated)
             {
                 rooms[i].LaunchWave(day, period, currentDuration);
             }
