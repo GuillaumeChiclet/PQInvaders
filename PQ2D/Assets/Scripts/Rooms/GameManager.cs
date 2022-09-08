@@ -15,6 +15,8 @@ public enum EPeriod
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject looseScreen;
     [SerializeField] private RoomManager[] rooms;
 
     [Header("Periods Durations")]
@@ -162,13 +164,14 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         gameStopped = true;
-        Debug.Log("WIN");
+
+        winScreen.SetActive(true);
+        //Debug.Log("WIN");
     }
 
     public void GameOver()
     {
         gameStopped = true;
-        Debug.Log("GAME OVER");
+        looseScreen.SetActive(true);
     }
-
 }

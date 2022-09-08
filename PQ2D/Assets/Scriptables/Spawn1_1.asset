@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - periods:
-    - enemiesNumber: 1a00000000000000
-    - enemiesNumber: 2200000002000000
-    - enemiesNumber: 2b00000003000000
+    - enemiesNumber: 0f00000000000000
+    - enemiesNumber: 1400000002000000
+    - enemiesNumber: 1e00000003000000
   - periods:
     - enemiesNumber: 1100000001000000
     - enemiesNumber: 1a00000002000000

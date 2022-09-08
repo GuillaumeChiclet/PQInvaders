@@ -20,7 +20,7 @@ public class PlayerMelee : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") || Input.GetButton("Fire2"))
         {
             Attack();
             timer = timeBetween2Attacks;

@@ -170,12 +170,20 @@ MonoBehaviour:
   aimCursor: {fileID: 0}
   gun: {fileID: 165984806165210786}
   playerSprite: {fileID: 705092230657668159}
-  bulletPrefab: {fileID: 608358300563833401, guid: 50a7871d7dba8fd4d9e266629456f96b, type: 3}
+  gunSprite1: {fileID: 4751613191354797211}
+  gunSprite2: {fileID: 5159767934327948830}
+  onShootFX: {fileID: 4087787725020547242, guid: c360ef59cabd9b44b9d45eff67f6aa69, type: 3}
+  bulletPrefab1: {fileID: 608358300563833401, guid: 50a7871d7dba8fd4d9e266629456f96b, type: 3}
+  bulletPrefab2: {fileID: 608358300563833401, guid: 4031d8906235fa14890510bf662e9420, type: 3}
   firePoint: {fileID: 705092230350522658}
-  bulletImpulse: 20
-  bulletTorque: {x: 100, y: 300}
-  timeBetween2bullets: 0.1
-  bulletAmountMax: 50
+  bulletImpulse1: 20
+  bulletImpulse2: 10
+  bulletTorque1: {x: 100, y: 200}
+  bulletTorque2: {x: 100, y: 200}
+  timeBetween2bullets1: 0.2
+  timeBetween2bullets2: 1
+  bulletAmountMax1: 50
+  bulletAmountMax2: 10
   coneAngleMinMax: {x: 3, y: 13}
   sprayForce: {x: 2, y: 3}
   sprayDeplete: 10
@@ -211,6 +219,9 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   lineLeft: {fileID: 2693080948660103989}
   lineRight: {fileID: 948178486394667982}
+  hasGun1: 0
+  hasGun2: 0
+  currentGun: 1
 --- !u!114 &1871549828214163013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705092230350522685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.631, y: 0, z: 0}
+  m_LocalPosition: {x: 0.73, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -618,9 +629,94 @@ Transform:
   m_Children:
   - {fileID: 705092230350522658}
   - {fileID: 6682756191365748826}
+  - {fileID: 1828174265329308174}
   m_Father: {fileID: 3124716064549841558}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3747953911897978715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828174265329308174}
+  - component: {fileID: 5159767934327948830}
+  m_Layer: 3
+  m_Name: SpriteGun2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1828174265329308174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747953911897978715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 12.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5284999254664381188}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5159767934327948830
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747953911897978715}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: 1b0dfa48e7da32742bc5365b031997a2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4283167575922843191
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,12 +728,12 @@ GameObject:
   - component: {fileID: 6682756191365748826}
   - component: {fileID: 4751613191354797211}
   m_Layer: 3
-  m_Name: Sprite
+  m_Name: SpriteGun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6682756191365748826
 Transform:
   m_ObjectHideFlags: 0
@@ -645,14 +741,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4283167575922843191}
-  m_LocalRotation: {x: 0, y: 0, z: -0.22410057, w: 0.97456604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 12.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5284999254664381188}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4751613191354797211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -693,9 +789,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 1bf67b843d735ec429fdcea0610c5508, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: 1b0dfa48e7da32742bc5365b031997a2, type: 3}
+  m_Color: {r: 0.04937911, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1010,7 +1106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5407251904644446206}
   m_LocalRotation: {x: -0, y: -0, z: -0.85970414, w: 0.5107923}
-  m_LocalPosition: {x: 0.6770895, y: -0.40850258, z: 0}
+  m_LocalPosition: {x: 0.805, y: -0.478, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1058,8 +1154,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: e4a51bd7aa7d55d4c936b088c00e8f7d, type: 3}
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: bd56298113a7e0547b699f1d68418f79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

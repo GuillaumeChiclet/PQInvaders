@@ -12,9 +12,12 @@ public class Ammunition : MonoBehaviour
     {
         if (isOn && collision.gameObject.TryGetComponent<PlayerShoot>(out PlayerShoot playerShoot))
         {
-            playerShoot.Refill();
+            if (!playerShoot.IsFull())
+            {
+                playerShoot.Refill();
 
-            StartCoroutine(Reload());
+                StartCoroutine(Reload());
+            }
         }
     }
 
