@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class EnemyGathering : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance instance;
+
     [SerializeField] private float timeToGather = 1.0f;
     [SerializeField] private AttentionMark attentionMark;
     // Here sprite control scaled
@@ -23,6 +26,7 @@ public class EnemyGathering : MonoBehaviour
         stock = centerStock;
         enemyController.Stop();
         StartCoroutine(Gather());
+        
     }
 
     IEnumerator Gather()
@@ -32,6 +36,8 @@ public class EnemyGathering : MonoBehaviour
         {
             timer += Time.deltaTime;
             
+            RuntimeManager.StudioSystem.setParameterByName("Alarm", +1);
+
             if (attentionMark)
             {
                 attentionMark.SetPercent(timer / timeToGather);
@@ -39,6 +45,8 @@ public class EnemyGathering : MonoBehaviour
 
             yield return null;
         }
+
+        RuntimeManager.StudioSystem.setParameterByName("Alarm", -1);
 
         stock.SuccessGather();
         enemyController.Die();

@@ -43,7 +43,7 @@ MonoBehaviour:
     Data3: 1840985531
     Data4: 2132256019
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
     Data3: -497821265
     Data4: -1143605462
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
     Data3: 1673276839
     Data4: 577167417
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 406
---- !u!114 &-1223652814198265592
+--- !u!114 &-2002390602595351168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,15 +114,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Button_Click
   m_EditorClassIdentifier: 
-  Path: SoundBank/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637982543318867179
-  FileSizes: []
-  Exists: 1
+  Path: event:/UI/Button_Click
+  Guid:
+    Data1: -1282734912
+    Data2: 1277855470
+    Data3: 2091514273
+    Data4: 1763183890
+  Banks:
+  - {fileID: 3481519744753052899}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 261
 --- !u!114 &-704203318642264742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +151,7 @@ MonoBehaviour:
     Data3: -954620257
     Data4: 178150046
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -150,6 +159,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1013
+--- !u!114 &-198235678893499304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../../Git_Personnel/Cours/PROJETS/GameWeek 2022/Fmod/PQInvaders/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637982750220076167
+  FileSizes:
+  - Name: Desktop
+    Value: 1592
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +192,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7090752086557135424}
-  - {fileID: -1223652814198265592}
+  - {fileID: -198235678893499304}
+  - {fileID: 3481519744753052899}
   EditorEvents:
   - {fileID: 4084183508128330443}
   - {fileID: 2453168402904955018}
@@ -177,14 +206,41 @@ MonoBehaviour:
   - {fileID: 5584505349452143711}
   - {fileID: 6494823377657539241}
   - {fileID: 1465429671506182006}
+  - {fileID: 7330361458529994277}
+  - {fileID: -2002390602595351168}
   EditorParameters:
   - {fileID: 2285995821118513974}
+  - {fileID: 1008675626574256027}
   MasterBanks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   StringsBanks:
-  - {fileID: 7090752086557135424}
-  cacheTime: 637982543318887122
+  - {fileID: -198235678893499304}
+  cacheTime: 637982750220076167
   cacheVersion: 10
+--- !u!114 &1008675626574256027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alarm
+  m_EditorClassIdentifier: 
+  Name: Alarm
+  StudioPath: parameter:/Alarm
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3052608892
+    data2: 843549724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1465429671506182006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +260,7 @@ MonoBehaviour:
     Data3: 186560427
     Data4: -1126013424
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -231,7 +287,7 @@ MonoBehaviour:
     Data3: -960563828
     Data4: -1441892384
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -282,12 +338,13 @@ MonoBehaviour:
     Data3: 1059744673
     Data4: 45583852
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: -7858856548368635249}
+  - {fileID: 4271617339018219273}
   MinDistance: 1
   MaxDistance: 20
   Length: 361014
@@ -310,14 +367,35 @@ MonoBehaviour:
     Data3: -506849141
     Data4: -2094776306
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 8090546785580613030}
   MinDistance: 1
   MaxDistance: 20
-  Length: 250
+  Length: 289
+--- !u!114 &3481519744753052899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../../Git_Personnel/Cours/PROJETS/GameWeek 2022/Fmod/PQInvaders/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637982750220036481
+  FileSizes:
+  - Name: Desktop
+    Value: 9233760
+  Exists: 1
 --- !u!114 &4084183508128330443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +415,7 @@ MonoBehaviour:
     Data3: 756162432
     Data4: -876212861
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -345,6 +423,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &4271617339018219273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Alarm
+  m_EditorClassIdentifier: 
+  Name: Alarm
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3052608892
+    data2: 843549724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5584505349452143711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +466,7 @@ MonoBehaviour:
     Data3: -1858695786
     Data4: 1311588618
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -391,7 +493,7 @@ MonoBehaviour:
     Data3: 1144324263
     Data4: 1139270205
   Banks:
-  - {fileID: -1223652814198265592}
+  - {fileID: 3481519744753052899}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -399,7 +501,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 219
---- !u!114 &7090752086557135424
+--- !u!114 &7330361458529994277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,14 +510,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Button_Move
   m_EditorClassIdentifier: 
-  Path: SoundBank/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637982543318887122
-  FileSizes:
-  - Name: 
-    Value: 1224
+  Path: event:/UI/Button_Move
+  Guid:
+    Data1: 639283838
+    Data2: 1235691791
+    Data3: 722295728
+    Data4: 719024614
+  Banks:
+  - {fileID: 3481519744753052899}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80
+--- !u!114 &8090546785580613030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/IsRunning
+  m_EditorClassIdentifier: 
+  Name: IsRunning
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3600695738
+    data2: 407911158
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1

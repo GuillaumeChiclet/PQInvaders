@@ -333,10 +333,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
+  HasSourceProject: 1
+  HasPlatforms: 1
   sourceProjectPath: ../../../../../../Git_Personnel/Cours/PROJETS/GameWeek 2022/Fmod/PQInvaders/PQInvaders.fspro
-  sourceBankPath: SoundBank/Desktop
+  sourceBankPath: ../../../../../../Git_Personnel/Cours/PROJETS/GameWeek 2022/Fmod/PQInvaders/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

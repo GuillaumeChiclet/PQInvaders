@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4613104732439848631}
   - component: {fileID: 4613104732439848628}
   - component: {fileID: 1450393543638518509}
+  - component: {fileID: -2196060534481845915}
+  - component: {fileID: -1712505946854776325}
   m_Layer: 0
   m_Name: Enemy_B
   m_TagString: Untagged
@@ -109,6 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67fdec3589ee7040afa212576a66d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hit:
+    Guid:
+      Data1: -679600615
+      Data2: 1084052693
+      Data3: -954620257
+      Data4: 178150046
+    Path: event:/Enemy/Enemy_Hit
   spriteRenderer: {fileID: 4613104733011154508}
   spriteShuffle: []
   particlesOnHit: {fileID: 0}
@@ -134,6 +143,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToGather: 3
   attentionMark: {fileID: 6775935967008526217}
+--- !u!114 &-2196060534481845915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613104732439848624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 802228581
+      Data2: 1092596824
+      Data3: -497821265
+      Data4: -1143605462
+    Path: event:/Enemy/Enemy_Voice
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-1712505946854776325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613104732439848624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 972164720
+      Data2: 1148088633
+      Data3: -1858695786
+      Data4: 1311588618
+    Path: event:/Enemy/Enemy_Walk
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4613104733011154510
 GameObject:
   m_ObjectHideFlags: 0
