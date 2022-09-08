@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
     {
         inputMovement.x = isRawInput ? Input.GetAxisRaw("Horizontal") : Input.GetAxis("Horizontal");
         inputMovement.y = isRawInput ? Input.GetAxisRaw("Vertical") : Input.GetAxis("Vertical");
-
-        instance = FMODUnity.RuntimeManager.CreateInstance(CharaWalk);
-        instance.start();
-        instance.release();
-        instance.setParameterByName( "IsRunning",inputMovement.magnitude > 0.1f ? 1.0f : 0.0f); 
+            
+        
+        if (inputMovement.magnitude > 0.1f)
+        {
+            RuntimeManager.PlayOneShot(CharaWalk);
+        }
+        
     }
 
     private void FixedUpdate()

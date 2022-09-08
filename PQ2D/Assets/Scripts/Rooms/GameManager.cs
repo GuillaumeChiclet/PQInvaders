@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using FMODUnity;
 
 public enum EPeriod
 {
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
                 timer = 0.0f;
                 LaunchWave(0);
                 UpdateUI(1);
+                RuntimeManager.StudioSystem.setParameterByName("EnemyNumber", 0);
                 break;
             case EPeriod.Morning:
                 currentPeriod = EPeriod.Midday;
@@ -151,6 +153,8 @@ public class GameManager : MonoBehaviour
 
     private void LaunchWave(int period)
     {
+        RuntimeManager.StudioSystem.setParameterByName("Launch", 1);
+
         for (int i = 0; i < rooms.Length; i++)
         {
             if (rooms[i].activated)
@@ -163,6 +167,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 0);
         gameStopped = true;
 
         winScreen.SetActive(true);
@@ -171,6 +176,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 2);
         gameStopped = true;
         looseScreen.SetActive(true);
     }
