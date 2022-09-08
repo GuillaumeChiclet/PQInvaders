@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using FMODUnity;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
+    public EventReference Hit;
+    private FMOD.Studio.EventInstance instance;
+
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite[] spriteShuffle;
     [SerializeField] private GameObject particlesOnHit;
@@ -56,6 +60,7 @@ public class EnemyController : MonoBehaviour, IDamageable
             return;
 
         spriteRenderer.flipX = agent.desiredVelocity.x > 0;
+
     }
 
     public void UpdateDestination()
@@ -91,6 +96,11 @@ public class EnemyController : MonoBehaviour, IDamageable
             Destroy(col);
             Die();
         }
+
+        instance = FMODUnity.RuntimeManager.CreateInstance(Hit);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance,transform,rb );
+        instance.start();
+        instance.release();
     }
 
     public void Die()

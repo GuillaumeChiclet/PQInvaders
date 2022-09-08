@@ -7,6 +7,11 @@ public class PlayerShoot : MonoBehaviour
 {
     public EventReference soundShoot;
     private FMOD.Studio.EventInstance instance;
+    public EventReference soudnUnshoot;
+    private FMOD.Studio.EventInstance instance2;
+    public EventReference soundReload;
+    private FMOD.Studio.EventInstance instance3;
+
 
     [SerializeField] private RectTransform ammoMaskUI;
     [SerializeField] private Vector2 ammoMinMaskUI = new Vector2(0, 184);
@@ -76,6 +81,9 @@ public class PlayerShoot : MonoBehaviour
 
     public void Refill()
     {
+        instance3 = FMODUnity.RuntimeManager.CreateInstance(soundReload);
+        instance3.start();
+        instance3.release();
         bulletAmount1 = bulletAmountMax1;
         bulletAmount2 = bulletAmountMax2;
         UpdateAmmoUI();
@@ -181,6 +189,9 @@ public class PlayerShoot : MonoBehaviour
         if (bulletAmount2 <= 0)
         {
             // TODO : sound *clic clic* no more bullets
+            instance2 = FMODUnity.RuntimeManager.CreateInstance(soudnUnshoot);
+            instance2.start();
+            instance2.release();
             return;
         }
 
@@ -215,6 +226,9 @@ public class PlayerShoot : MonoBehaviour
         if (bulletAmount1 <= 0)
         {
             // TODO : sound *clic clic* no more bullets
+            instance2 = FMODUnity.RuntimeManager.CreateInstance(soudnUnshoot);
+            instance2.start();
+            instance2.release();
             return;
         }
 

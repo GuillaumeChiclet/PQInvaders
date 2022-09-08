@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerMelee : MonoBehaviour
 {
+    public EventReference soundMelee;
+    private FMOD.Studio.EventInstance instance;
+
     [SerializeField] private int damage = 1;
     [SerializeField] private float range = 3.0f;
     [SerializeField] private float coneAngle = 30.0f;
@@ -30,6 +34,10 @@ public class PlayerMelee : MonoBehaviour
     private void Attack()
     {
         weaponAnimator.SetTrigger("CAC");
+
+        instance = FMODUnity.RuntimeManager.CreateInstance(soundMelee);
+        instance.start();
+        instance.release();
 
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, weapons.right, range);
 

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
+    public EventReference CharaWalk;
+    private FMOD.Studio.EventInstance instance;
+
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private bool isRawInput = false;
     [SerializeField] private Animator animator;
@@ -17,6 +21,10 @@ public class PlayerController : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+
+        instance = FMODUnity.RuntimeManager.CreateInstance(CharaWalk);
+        instance.start();
+        instance.release();
     }
 
     private void Update()
@@ -24,7 +32,7 @@ public class PlayerController : MonoBehaviour
         inputMovement.x = isRawInput ? Input.GetAxisRaw("Horizontal") : Input.GetAxis("Horizontal");
         inputMovement.y = isRawInput ? Input.GetAxisRaw("Vertical") : Input.GetAxis("Vertical");
 
-        
+        instance.setParameterByName( "IsRunning",inputMovement.magnitude > 0.1f ? 1.0f : 0.0f); 
     }
 
     private void FixedUpdate()
