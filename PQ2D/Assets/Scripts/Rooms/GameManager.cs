@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum EPeriod
 {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float enddayDuration = 10.0f;
 
     [SerializeField] private GameObject[] waveUIs;
+    [SerializeField] private TMP_Text dayText;
 
     [HideInInspector] public int EnemyNumber = 0;
     private void AddEnemy() => EnemyNumber++;
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         {
             room.SetupSpawners(AddEnemy, RemoveEnemy);
         }
+
+        dayText.text = "Day 1";
 
         /*
         for (int i = 1; i < rooms.Length; i++)
@@ -123,7 +127,10 @@ public class GameManager : MonoBehaviour
                 }
                 currentPeriod = EPeriod.Standby;
                 currentDuration = standbyDuration;
+                timer = 0.0f;
+
                 day += 1;
+                dayText.text = "Day " + (day + 1).ToString();
 
                 if (day < rooms.Length)
                     rooms[day].ActivateRoom();

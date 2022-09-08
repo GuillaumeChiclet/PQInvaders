@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private bool isRawInput = false;
+    [SerializeField] private Animator animator;
 
     Rigidbody2D rb;
     Camera cam;
@@ -22,11 +23,15 @@ public class PlayerController : MonoBehaviour
     {
         inputMovement.x = isRawInput ? Input.GetAxisRaw("Horizontal") : Input.GetAxis("Horizontal");
         inputMovement.y = isRawInput ? Input.GetAxisRaw("Vertical") : Input.GetAxis("Vertical");
+
+        
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + inputMovement * moveSpeed * Time.fixedDeltaTime);
+
+        animator.SetBool("running", inputMovement.magnitude > 0.1f);
     }
 
 
