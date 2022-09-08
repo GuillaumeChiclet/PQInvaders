@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4017758464725814148}
   - component: {fileID: 5513082492646085742}
   - component: {fileID: 8793198548500294200}
-  - component: {fileID: 4216090070664670457}
+  - component: {fileID: 8636287426862561423}
   m_Layer: 7
   m_Name: SimpleBullet2
   m_TagString: Untagged
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4216090070664670457
+--- !u!114 &8636287426862561423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,8 +165,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 608358300563833401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdcde20f5056e343bc426ad7149cbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f293004e3629e40be4287f6d7f9324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesOnHit: {fileID: 0}
-  lifeTime: 10
+  explosionRadius: 2
+  repulsionForce: 100
+  damage: 2
+  particlesOnHit: {fileID: 5689539335067141613, guid: b7e1e52162bed3b4dad5a9483e823390, type: 3}
+  lifeTime: 4

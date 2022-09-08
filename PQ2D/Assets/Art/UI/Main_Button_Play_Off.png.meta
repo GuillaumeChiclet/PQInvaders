@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 261e74ae485a90e45bccb7f21b9973c9
+guid: 582dae566b97f55468d775ba5c368cc0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Button_On_0
+      name: Main_Button_Play_Off_0
       rect:
         serializedVersion: 2
         x: 84
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9c47a9ff9939094ba862061de9d1bc3
-      internalID: -880381018
+      spriteID: 1d9e6da98c8939d4f9fb3dcc6f164440
+      internalID: 707323520
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main_Button_On_0: -880381018
+      Main_Button_Play_Off_0: 707323520
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
