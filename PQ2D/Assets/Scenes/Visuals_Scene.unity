@@ -3573,7 +3573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10.399994, y: 6.600006}
+  m_AnchoredPosition: {x: 10.400024, y: 6.5999756}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &432681853
@@ -4156,7 +4156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &536364562
 Transform:
   m_ObjectHideFlags: 0
@@ -8387,7 +8387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &799695472
 Transform:
   m_ObjectHideFlags: 0
@@ -9972,7 +9972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.1, y: -36}
+  m_AnchoredPosition: {x: 13.099976, y: -36}
   m_SizeDelta: {x: 140.7831, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &954029489
@@ -10905,7 +10905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1072061996
 Transform:
   m_ObjectHideFlags: 0
@@ -12134,7 +12134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -15.038879, y: 68.09996}
+  m_AnchoredPosition: {x: -15.038818, y: 68.099976}
   m_SizeDelta: {x: 193.556, y: 193.556}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1187574296
@@ -16662,7 +16662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1560416494
 Transform:
   m_ObjectHideFlags: 0
@@ -18355,7 +18355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1789790327
 Transform:
   m_ObjectHideFlags: 0
@@ -23730,7 +23730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018774351
 Transform:
   m_ObjectHideFlags: 0

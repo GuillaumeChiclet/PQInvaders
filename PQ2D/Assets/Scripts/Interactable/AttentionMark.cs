@@ -8,8 +8,6 @@ public class AttentionMark : MonoBehaviour
     [SerializeField] private Transform mask;
     [SerializeField] private Vector2 minMax = new Vector2(0, 3.5f);
 
-    float currentAmount = 0.0f;
-
     private void Awake()
     {
         foreach(GameObject go in ui)
