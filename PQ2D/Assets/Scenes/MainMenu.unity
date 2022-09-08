@@ -788,7 +788,7 @@ MonoBehaviour:
   - Master
   - Master.strings
   CollisionTag: 
-  PreloadSamples: 1
+  PreloadSamples: 0
 --- !u!114 &2020418218
 MonoBehaviour:
   m_ObjectHideFlags: 0

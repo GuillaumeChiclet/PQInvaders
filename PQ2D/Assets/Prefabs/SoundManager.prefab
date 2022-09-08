@@ -81,4 +81,4 @@ MonoBehaviour:
   - Master
   - Master.strings
   CollisionTag: 
-  PreloadSamples: 1
+  PreloadSamples: 0
