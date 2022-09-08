@@ -115,8 +115,8 @@ MonoBehaviour:
   spawnBornRight: {fileID: 8133865182966213421}
   targetBornLeft: {fileID: 1257081967142267775}
   targetBornRight: {fileID: 7029950429782782582}
-  enemyPrefabA: {fileID: 6331348382686701858, guid: afc2e05243c9fca4f8261d710a012732, type: 3}
-  enemyPrefabB: {fileID: 6331348382686701858, guid: c88f5180428d32247aceecaa0e5bbc56, type: 3}
+  enemyPrefabA: {fileID: 3273521530369901087, guid: afc2e05243c9fca4f8261d710a012732, type: 3}
+  enemyPrefabB: {fileID: 4613104732439848624, guid: c88f5180428d32247aceecaa0e5bbc56, type: 3}
   OnAddEnemy:
     m_PersistentCalls:
       m_Calls: []
