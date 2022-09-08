@@ -217,7 +217,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3273521529799258851}
   spriteShuffle: []
   particlesOnHit: {fileID: 0}
-  particlesOnDeath: {fileID: 0}
+  particlesOnDeath: {fileID: 7627283543060434022, guid: 7816cd78105f3394d8ff9c998c834cbd, type: 3}
   moveSpeed: 2
   lifeMax: 1
   hitColor: {r: 1, g: 0, b: 0, a: 1}

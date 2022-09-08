@@ -8,6 +8,10 @@ public class PlayerShoot : MonoBehaviour
     public EventReference soundShoot;
     private FMOD.Studio.EventInstance instance;
 
+    [SerializeField] private Transform aimCursor;
+    [SerializeField] private GameObject gun;
+    [SerializeField] private SpriteRenderer playerSprite;
+
     [Header("Shoot Bullet")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
@@ -75,6 +79,15 @@ public class PlayerShoot : MonoBehaviour
         {
             timerShoot -= Time.deltaTime;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 lookDir = aimCursor.position - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        gun.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        playerSprite.flipX = lookDir.x < 0;
     }
 
     private void Shoot()

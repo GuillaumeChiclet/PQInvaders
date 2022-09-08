@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private NavMeshAgent agent;
     private Rigidbody2D rb;
+    private Collider2D col;
 
     private Vector3 destination = Vector3.zero;
     private bool stopped = false;
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private void Awake()
     {
+        col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -82,19 +84,21 @@ public class EnemyController : MonoBehaviour, IDamageable
         }
 
         timerHit = timeHit;
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = hitColor;
 
         if (life == 0)
         {
+            Destroy(col);
             Die();
         }
     }
 
     public void Die()
     {
+        agent.isStopped = true;
         if (particlesOnDeath)
         {
-            Instantiate(particlesOnDeath, transform.position, particlesOnDeath.transform.rotation);
+            Destroy(Instantiate(particlesOnDeath, transform.position, particlesOnDeath.transform.rotation), 0.4f);
         }
         OnDeath.Invoke(this);
         Destroy(gameObject, timeHit);

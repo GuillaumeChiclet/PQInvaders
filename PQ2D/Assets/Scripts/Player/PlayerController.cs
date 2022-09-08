@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private bool isRawInput = false;
-    [SerializeField] private Transform aimCursor;
 
     Rigidbody2D rb;
     Camera cam;
@@ -27,12 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 lookDir = (Vector2)aimCursor.position - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-
         rb.MovePosition(rb.position + inputMovement * moveSpeed * Time.fixedDeltaTime);
     }
+
 
     /*
     public void Knockback()

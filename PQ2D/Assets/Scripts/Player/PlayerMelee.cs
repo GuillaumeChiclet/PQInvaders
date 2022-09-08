@@ -9,6 +9,7 @@ public class PlayerMelee : MonoBehaviour
     [SerializeField] private float coneAngle = 30.0f;
     [SerializeField] private float timeBetween2Attacks = 0.5f;
     [SerializeField] private Animator weaponAnimator;
+    [SerializeField] private Transform weapons;
     private float timer = 0.0f;
 
     private void Update()
@@ -30,12 +31,12 @@ public class PlayerMelee : MonoBehaviour
     {
         weaponAnimator.SetTrigger("CAC");
 
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, transform.right, range);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, weapons.right, range);
 
         foreach (RaycastHit2D hit in hits)
         {
             Vector3 dirToHit = (hit.point - (Vector2)transform.position);
-            float angle = Vector3.Angle(transform.right, dirToHit);
+            float angle = Vector3.Angle(weapons.right, dirToHit);
             if (angle <= coneAngle)
             {
                 if (hit.collider.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable))
@@ -48,8 +49,8 @@ public class PlayerMelee : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3 left = Quaternion.Euler(0, 0, coneAngle) * transform.right;
-        Vector3 right = Quaternion.Euler(0, 0, -coneAngle) * transform.right;
+        Vector3 left = Quaternion.Euler(0, 0, coneAngle) * weapons.right;
+        Vector3 right = Quaternion.Euler(0, 0, -coneAngle) * weapons.right;
 
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + left * range);

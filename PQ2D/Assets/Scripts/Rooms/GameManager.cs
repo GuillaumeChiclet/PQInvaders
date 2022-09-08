@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
                     Win();
                     break;
                 }
-                currentPeriod = EPeriod.Morning;
+                currentPeriod = EPeriod.Standby;
                 currentDuration = standbyDuration;
                 day += 1;
 
