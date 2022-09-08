@@ -193,6 +193,46 @@ PrefabInstance:
       propertyPath: aimCursor
       value: 
       objectReference: {fileID: 4699073863420485496}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soundReload.Path
+      value: event:/Character/Reload
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soudnUnshoot.Path
+      value: event:/Character/Unshoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soundReload.Guid.Data1
+      value: -1555492304
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soundReload.Guid.Data2
+      value: 1148971965
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soundReload.Guid.Data3
+      value: -960563828
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soundReload.Guid.Data4
+      value: -1441892384
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soudnUnshoot.Guid.Data1
+      value: 2078826379
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soudnUnshoot.Guid.Data2
+      value: 1277352933
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soudnUnshoot.Guid.Data3
+      value: 186560427
+      objectReference: {fileID: 0}
+    - target: {fileID: 705092230263174912, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
+      propertyPath: soudnUnshoot.Guid.Data4
+      value: -1126013424
+      objectReference: {fileID: 0}
     - target: {fileID: 705092230263174941, guid: f4ef7b3a9e5899a4d90e54c7d92791f2, type: 3}
       propertyPath: m_RootOrder
       value: 0

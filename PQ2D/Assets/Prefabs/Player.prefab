@@ -68,7 +68,6 @@ GameObject:
   - component: {fileID: 705092230263174914}
   - component: {fileID: 705092230263174912}
   - component: {fileID: 1871549828214163013}
-  - component: {fileID: 1317671610}
   - component: {fileID: 3173698459733022100}
   - component: {fileID: 8261940669710817587}
   m_Layer: 3
@@ -145,6 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848ba268ad4ac9a42b8922f26179615e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharaWalk:
+    Guid:
+      Data1: 579041332
+      Data2: 1162848002
+      Data3: -506849141
+      Data4: -2094776306
+    Path: event:/Character/Walk
   moveSpeed: 10
   isRawInput: 0
   animator: {fileID: 3173698459733022100}
@@ -167,6 +173,22 @@ MonoBehaviour:
       Data3: 1840985531
       Data4: 2132256019
     Path: event:/Character/Shoot
+  soudnUnshoot:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  soundReload:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ammoMaskUI: {fileID: 0}
+  ammoMinMaskUI: {x: 0, y: 184}
   aimCursor: {fileID: 0}
   gun: {fileID: 165984806165210786}
   playerSprite: {fileID: 705092230657668159}
@@ -234,42 +256,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07a29ab4ee03f743aab640dd307a841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundMelee:
+    Guid:
+      Data1: -1673158541
+      Data2: 1166455846
+      Data3: 1144324263
+      Data4: 1139270205
+    Path: event:/Character/Melee
   damage: 2
   range: 1.8
   coneAngle: 30
   timeBetween2Attacks: 0.7
   weaponAnimator: {fileID: 3150445479436759234}
   weapons: {fileID: 3124716064549841558}
---- !u!114 &1317671610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705092230263174943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
 --- !u!95 &3173698459733022100
 Animator:
   serializedVersion: 4

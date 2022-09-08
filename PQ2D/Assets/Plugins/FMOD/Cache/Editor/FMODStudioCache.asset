@@ -50,7 +50,61 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1522
+  Length: 441
+--- !u!114 &-5291250850645209055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Enemy_Voice
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Enemy_Voice
+  Guid:
+    Data1: 802228581
+    Data2: 1092596824
+    Data3: -497821265
+    Data4: -1143605462
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-5064524701696796042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Grenade
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Grenade
+  Guid:
+    Data1: -1694338730
+    Data2: 1124573003
+    Data3: 1673276839
+    Data4: 577167417
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 406
 --- !u!114 &-1223652814198265592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +120,36 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637981815234195637
+  lastModified: 637982543318867179
   FileSizes: []
   Exists: 1
+--- !u!114 &-704203318642264742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Enemy_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Enemy_Hit
+  Guid:
+    Data1: -679600615
+    Data2: 1084052693
+    Data3: -954620257
+    Data4: 178150046
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1013
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,14 +169,76 @@ MonoBehaviour:
   - {fileID: 4084183508128330443}
   - {fileID: 2453168402904955018}
   - {fileID: -5508904183468774547}
+  - {fileID: -704203318642264742}
+  - {fileID: 1880920086041114497}
+  - {fileID: 2905302910687287567}
+  - {fileID: -5064524701696796042}
+  - {fileID: -5291250850645209055}
+  - {fileID: 5584505349452143711}
+  - {fileID: 6494823377657539241}
+  - {fileID: 1465429671506182006}
   EditorParameters:
   - {fileID: 2285995821118513974}
   MasterBanks:
   - {fileID: -1223652814198265592}
   StringsBanks:
   - {fileID: 7090752086557135424}
-  cacheTime: 637981815234220437
+  cacheTime: 637982543318887122
   cacheVersion: 10
+--- !u!114 &1465429671506182006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Unshoot
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Unshoot
+  Guid:
+    Data1: 2078826379
+    Data2: 1277352933
+    Data3: 186560427
+    Data4: -1126013424
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 82
+--- !u!114 &1880920086041114497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Reload
+  Guid:
+    Data1: -1555492304
+    Data2: 1148971965
+    Data3: -960563828
+    Data4: -1441892384
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1506
 --- !u!114 &2285995821118513974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +290,34 @@ MonoBehaviour:
   - {fileID: -7858856548368635249}
   MinDistance: 1
   MaxDistance: 20
-  Length: 360897
+  Length: 361014
+--- !u!114 &2905302910687287567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Walk
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Walk
+  Guid:
+    Data1: 579041332
+    Data2: 1162848002
+    Data3: -506849141
+    Data4: -2094776306
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 250
 --- !u!114 &4084183508128330443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +345,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &5584505349452143711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Enemy_Walk
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Enemy_Walk
+  Guid:
+    Data1: 972164720
+    Data2: 1148088633
+    Data3: -1858695786
+    Data4: 1311588618
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &6494823377657539241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Melee
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Melee
+  Guid:
+    Data1: -1673158541
+    Data2: 1166455846
+    Data3: 1144324263
+    Data4: 1139270205
+  Banks:
+  - {fileID: -1223652814198265592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 219
 --- !u!114 &7090752086557135424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +414,8 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637981815234220437
+  lastModified: 637982543318887122
   FileSizes:
   - Name: 
-    Value: 900
+    Value: 1224
   Exists: 1
