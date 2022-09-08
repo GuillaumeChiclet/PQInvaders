@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyGathering : MonoBehaviour
 {
     [SerializeField] private float timeToGather = 1.0f;
+    [SerializeField] private AttentionMark attentionMark;
     // Here sprite control scaled
 
     EnemyController enemyController;
@@ -30,11 +31,16 @@ public class EnemyGathering : MonoBehaviour
         while (timer < timeToGather)
         {
             timer += Time.deltaTime;
-            // Here set scale of sprite above enemy
+            
+            if (attentionMark)
+            {
+                attentionMark.SetPercent(timer / timeToGather);
+            }
+
             yield return null;
         }
 
         stock.SuccessGather();
-        // Here success gathering
+        enemyController.Die();
     }
 }

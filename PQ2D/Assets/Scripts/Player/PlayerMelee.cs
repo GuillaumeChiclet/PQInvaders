@@ -8,6 +8,7 @@ public class PlayerMelee : MonoBehaviour
     [SerializeField] private float range = 3.0f;
     [SerializeField] private float coneAngle = 30.0f;
     [SerializeField] private float timeBetween2Attacks = 0.5f;
+    [SerializeField] private Animator weaponAnimator;
     private float timer = 0.0f;
 
     private void Update()
@@ -27,6 +28,8 @@ public class PlayerMelee : MonoBehaviour
 
     private void Attack()
     {
+        weaponAnimator.SetTrigger("CAC");
+
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, transform.right, range);
 
         foreach (RaycastHit2D hit in hits)

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float enddayDuration = 10.0f;
 
+    [SerializeField] private GameObject[] waveUIs;
+
     [HideInInspector] public int EnemyNumber = 0;
     private void AddEnemy() => EnemyNumber++;
     private void RemoveEnemy() => EnemyNumber--;
@@ -56,6 +58,18 @@ public class GameManager : MonoBehaviour
             rooms[i].gameObject.SetActive(false);
         }
         */
+        UpdateUI(0);
+    }
+
+    private void UpdateUI(int period)
+    {
+        for (int i = 0; i < waveUIs.Length; i++)
+        {
+            if (i == period)
+                waveUIs[i].SetActive(true);
+            else
+                waveUIs[i].SetActive(false);
+        }
     }
 
     private void Update()
@@ -76,23 +90,27 @@ public class GameManager : MonoBehaviour
                 currentDuration = morningDuration;
                 timer = 0.0f;
                 LaunchWave(0);
+                UpdateUI(1);
                 break;
             case EPeriod.Morning:
                 currentPeriod = EPeriod.Midday;
                 currentDuration = middayDuration;
                 timer = 0.0f;
                 LaunchWave(1);
+                UpdateUI(2);
                 break;
             case EPeriod.Midday:
                 currentPeriod = EPeriod.Evening;
                 currentDuration = eveningDuration;
                 timer = 0.0f;
                 LaunchWave(2);
+                UpdateUI(3);
                 break;
             case EPeriod.Evening:
                 currentPeriod = EPeriod.Endday;
                 currentDuration = enddayDuration;
                 timer = 0.0f;
+                UpdateUI(4);
                 break;
             case EPeriod.Endday:
                 if (EnemyNumber > 0)
@@ -109,6 +127,8 @@ public class GameManager : MonoBehaviour
 
                 if (day < rooms.Length)
                     rooms[day].ActivateRoom();
+
+                UpdateUI(0);
 
                 break;
             default:

@@ -62,7 +62,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   aimCursor: {fileID: 0}
-  followSpeed: 5
+  followSpeed: 200
   distanceBeforeAiming: 5
   aimingOffsetPercent: 0.3
 --- !u!114 &2224745805490200824
@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+  ListenerNumber: -1

@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] private GameObject particlesOnDeath;
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private int lifeMax = 3;
+    [SerializeField] private Color hitColor = Color.red;
+    [SerializeField] private float timeHit = 0.3f;
+    private float timerHit = 0.0f;
     private int life = 0;
 
     private NavMeshAgent agent;
@@ -37,6 +40,16 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private void Update()
     {
+        if (timerHit > 0.0f)
+        {
+            timerHit -= Time.deltaTime;
+        }
+        else
+        {
+            spriteRenderer.color = Color.white;
+            timerHit = 0.0f;
+        }
+
         if (stopped)
             return;
 
@@ -68,6 +81,9 @@ public class EnemyController : MonoBehaviour, IDamageable
             Instantiate(particlesOnHit, transform.position, particlesOnHit.transform.rotation);
         }
 
+        timerHit = timeHit;
+        spriteRenderer.color = Color.red;
+
         if (life == 0)
         {
             Die();
@@ -81,7 +97,7 @@ public class EnemyController : MonoBehaviour, IDamageable
             Instantiate(particlesOnDeath, transform.position, particlesOnDeath.transform.rotation);
         }
         OnDeath.Invoke(this);
-        Destroy(gameObject);
+        Destroy(gameObject, timeHit);
     }
 
     public void Stop()
