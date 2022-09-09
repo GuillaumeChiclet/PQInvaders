@@ -164,3 +164,7 @@ Received Import Request.
   path: Assets/Prefabs/PickupWeapon1.prefab
   artifactKey: Guid(8cc5545143d3c5c468ac48d7f7a0f95d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/PickupWeapon1.prefab using Guid(8cc5545143d3c5c468ac48d7f7a0f95d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f526ba234175de5c3af43a11a79db139') in 0.246084 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
