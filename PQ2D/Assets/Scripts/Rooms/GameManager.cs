@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
                 LaunchWave(0);
                 UpdateUI(1);
                 RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 1);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyNumber", 0);
                 break;
             case EPeriod.Morning:
                 currentPeriod = EPeriod.Midday;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
                 LaunchWave(1);
                 UpdateUI(2);
                 RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 1);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyNumber", 0);
                 break;
             case EPeriod.Midday:
                 currentPeriod = EPeriod.Evening;
