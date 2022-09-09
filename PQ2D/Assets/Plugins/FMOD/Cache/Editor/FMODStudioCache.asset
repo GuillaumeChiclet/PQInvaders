@@ -99,6 +99,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-6266748244845378668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Win-Game-Lose
+  m_EditorClassIdentifier: 
+  Name: Win-Game-Lose
+  StudioPath: parameter:/Win-Game-Lose
+  Min: 0
+  Max: 2
+  Default: 1
+  ID:
+    data1: 1958329930
+    data2: 422256082
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5508904183468774547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +279,7 @@ MonoBehaviour:
     data1: 1958329930
     data2: 422256082
   Type: 1
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &11400000
@@ -295,11 +319,12 @@ MonoBehaviour:
   - {fileID: 1008675626574256027}
   - {fileID: -6976353939783427862}
   - {fileID: 4091997200515843185}
+  - {fileID: -6266748244845378668}
   MasterBanks:
   - {fileID: 802328050508472054}
   StringsBanks:
   - {fileID: 1811677392786434481}
-  cacheTime: 637983212124402618
+  cacheTime: 637983226129807428
   cacheVersion: 10
 --- !u!114 &802328050508472054
 MonoBehaviour:
@@ -316,7 +341,7 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637983212124372839
+  lastModified: 637983226129777488
   FileSizes: []
   Exists: 1
 --- !u!114 &1008675626574256027
@@ -385,7 +410,7 @@ MonoBehaviour:
   Path: SoundBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637983212124402618
+  lastModified: 637983226129807428
   FileSizes:
   - Name: 
     Value: 1854

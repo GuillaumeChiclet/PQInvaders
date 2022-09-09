@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class CenterStock : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class CenterStock : MonoBehaviour
 
         if (stock == 0)
         {
+            RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 2);
+
             gameManager.GameOver();
         }
     }
