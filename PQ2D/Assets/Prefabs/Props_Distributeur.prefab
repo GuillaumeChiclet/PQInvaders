@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3264467498519218297}
   - component: {fileID: 3264467498519218296}
   - component: {fileID: 3264467498519218303}
+  - component: {fileID: 4216165378969062204}
+  - component: {fileID: 92537411532873058}
   - component: {fileID: 3264467498519218302}
   - component: {fileID: 4499000216646942252}
   m_Layer: 0
@@ -113,6 +115,66 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9697609, y: 0.31616563}
   m_EdgeRadius: 0
+--- !u!114 &4216165378969062204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264467498519218301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1937685275
+      Data2: 1215296828
+      Data3: 1860036234
+      Data4: -1368876098
+    Path: event:/Props/Fridge_Hit
+  Event: 
+  PlayEvent: 9
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &92537411532873058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264467498519218301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1094549626
+      Data2: 1138312288
+      Data3: -252274556
+      Data4: -1368066442
+    Path: event:/Props/Frgidge_Move
+  Event: 
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!50 &3264467498519218302
 Rigidbody2D:
   serializedVersion: 4
