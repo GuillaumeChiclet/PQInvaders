@@ -203,9 +203,9 @@ MonoBehaviour:
   bulletTorque1: {x: 100, y: 200}
   bulletTorque2: {x: 100, y: 200}
   timeBetween2bullets1: 0.2
-  timeBetween2bullets2: 1
+  timeBetween2bullets2: 0.7
   bulletAmountMax1: 50
-  bulletAmountMax2: 10
+  bulletAmountMax2: 35
   coneAngleMinMax: {x: 3, y: 13}
   sprayForce: {x: 2, y: 3}
   sprayDeplete: 10
@@ -742,7 +742,7 @@ Transform:
   m_GameObject: {fileID: 4283167575922843191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 12.2}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 12.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5284999254664381188}
@@ -789,8 +789,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 1b0dfa48e7da32742bc5365b031997a2, type: 3}
-  m_Color: {r: 0.04937911, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2a8dd12c38e6ef347b0abed161be74cf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
