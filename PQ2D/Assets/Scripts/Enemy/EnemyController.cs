@@ -105,6 +105,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        Stop();
         agent.isStopped = true;
         if (particlesOnDeath)
         {
