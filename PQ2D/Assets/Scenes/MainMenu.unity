@@ -123,6 +123,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20233413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5569778353447424079, guid: 214ff10bc2b919d419b5c98b285bd840, type: 3}
+  m_PrefabInstance: {fileID: 1062767378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &20233414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20233413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Menu
+  TriggerEvent: 1
+  value: 1
 --- !u!1 &82593244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1254,7 @@ GameObject:
   - component: {fileID: 764671109}
   - component: {fileID: 764671108}
   - component: {fileID: 764671111}
+  - component: {fileID: 764671112}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1328,6 +1350,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764671112}
+        m_TargetAssemblyTypeName: FMODUnity.StudioGlobalParameterTrigger, FMODUnity
+        m_MethodName: TriggerParameters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &764671109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,6 +1430,22 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &764671112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764671106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Menu
+  TriggerEvent: 0
+  value: 0
 --- !u!1 &886934905
 GameObject:
   m_ObjectHideFlags: 0
