@@ -122,7 +122,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("One"))
         {
-            if (hasGun2 && currentGun == 2)
+            if (hasGun1 && currentGun == 2)
             {
                 currentGun = 1;
                 gunSprite1.gameObject.SetActive(true);
@@ -131,7 +131,7 @@ public class PlayerShoot : MonoBehaviour
         }
         else if (Input.GetButtonDown("Two"))
         {
-            if (hasGun1 && currentGun == 1)
+            if (hasGun2 && currentGun == 1)
             {
                 currentGun = 2;
                 gunSprite2.gameObject.SetActive(true);
