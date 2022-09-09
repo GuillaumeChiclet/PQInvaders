@@ -170,14 +170,16 @@ public class GameManager : MonoBehaviour
         RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 0);
         gameStopped = true;
 
+        Cursor.visible = true;
         winScreen.SetActive(true);
-        //Debug.Log("WIN");
     }
 
     public void GameOver()
     {
         RuntimeManager.StudioSystem.setParameterByName("Win-Game-Lose", 2);
         gameStopped = true;
+
+        Cursor.visible = true;
         looseScreen.SetActive(true);
     }
 }

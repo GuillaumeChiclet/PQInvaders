@@ -122,20 +122,20 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("One"))
         {
-            if (hasGun1 && currentGun == 1)
-            {
-                currentGun = 2;
-                gunSprite2.gameObject.SetActive(true);
-                gunSprite1.gameObject.SetActive(false);
-            }
-        }
-        else if (Input.GetButtonDown("Two"))
-        {
             if (hasGun2 && currentGun == 2)
             {
                 currentGun = 1;
                 gunSprite1.gameObject.SetActive(true);
                 gunSprite2.gameObject.SetActive(false);
+            }
+        }
+        else if (Input.GetButtonDown("Two"))
+        {
+            if (hasGun1 && currentGun == 1)
+            {
+                currentGun = 2;
+                gunSprite2.gameObject.SetActive(true);
+                gunSprite1.gameObject.SetActive(false);
             }
         }
 

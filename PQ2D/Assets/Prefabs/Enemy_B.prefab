@@ -52,7 +52,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   spriteShuffle: []
   particlesOnHit: {fileID: 0}
   particlesOnDeath: {fileID: 7627283543060434022, guid: 7816cd78105f3394d8ff9c998c834cbd, type: 3}
-  moveSpeed: 1
+  moveSpeed: 2
   lifeMax: 3
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   timeHit: 0.3
